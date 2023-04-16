@@ -128,6 +128,11 @@ One store for the entire application
 
 It is getting imported. It is just deprecated. It can still be imported in the future with legacy_createStore. They recommend to use redux-toolkit.
 
+
+## 7- App main Scienarios:
+- ordering cake
+- Restocking Cake
+- 
 ----------------------------
 ### Course Resource :
 [Redux tutorial ](https://www.youtube.com/watch?v=0awA5Uw6SJE&list=PLC3y8-rFHvwiaOAuTtVXittwybYIorRB3&index=2)

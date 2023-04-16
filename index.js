@@ -39,3 +39,12 @@ store.dispatch(orderCake());
 store.dispatch(orderCake());
 
 unSubscribe();
+
+
+/** if I used  :
+ store.dispatch({
+        type: CAKE_ORDERED,
+        quantity: 1
+    })
+    instead of action creator , this will not give advantage 
+*/
