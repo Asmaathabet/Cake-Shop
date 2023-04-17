@@ -1,6 +1,6 @@
 # Cake Shop
 
-a Demo built by Redux toolkit 
+a Demo built by React - Redux. 
 
 
 ## 2 - Core Concepts :
@@ -197,6 +197,24 @@ It is getting imported. It is just deprecated. It can still be imported in the f
   - install `axios` & redux-thunk for middleware by `npm i axios redux-thunk`
   - visit `https://jsonplaceholder.typicode.com/users` website to fetch data from it .    
   
+
+
+## Redux Concerns: 
+- alot of packages :
+   - Redux-thunk
+   - Immer
+   - Redux-devtools  
+- too much code
+   - actions
+   - actions creator
+   - actions objects
+   - switch statements in reducers
+  
+So to enchance user experience with redux --> it should use redux toolkit 
+
+## Redux toolkit
+offical toolset for efficient redux development
+
 ----------------------------
 ### Course Resource :
 [Redux tutorial ](https://www.youtube.com/watch?v=0awA5Uw6SJE&list=PLC3y8-rFHvwiaOAuTtVXittwybYIorRB3&index=2)
