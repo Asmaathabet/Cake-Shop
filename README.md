@@ -146,7 +146,17 @@ It is getting imported. It is just deprecated. It can still be imported in the f
 
   ## 8 - Add Immer 
   `npm i immer` 
-  use producer in the reducer instead of `...` nesting state.     
+  use producer in the reducer instead of `...` nesting state.  
+
+  ## 9 - Middleware
+  suggested way to extend Redux with custom functionality
+  - provide a third-party extension point between dispatching an action an the moment it reaches the reducer.
+  - use middleware for logging, crash reporting, performing asynchronus tasks etc. 
+  - use `redux-logger`    
+
+**supporting resource :**
+- use `.default` beside logger in middleware.
+- [middleware problem not function](https://stackoverflow.com/questions/46869671/typeerror-middleware-is-not-a-function)
 ----------------------------
 ### Course Resource :
 [Redux tutorial ](https://www.youtube.com/watch?v=0awA5Uw6SJE&list=PLC3y8-rFHvwiaOAuTtVXittwybYIorRB3&index=2)

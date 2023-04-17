@@ -1,5 +1,6 @@
-import redux, { bindActionCreators, combineReducers } from 'redux'
+import redux, { bindActionCreators, combineReducers, applyMiddleware } from 'redux'
 import { legacy_createStore as createStore } from 'redux';
+import logger from 'redux-logger';
 
 const CAKE_ORDERED = 'CAKE_ORDERED';
 const CAKE_RESTOCKED = 'CAKE_RESTOCKED';
@@ -81,7 +82,7 @@ const rootReducer = combineReducers({
     iceCream: iceCreamReducer
 })
 
-const store = createStore(rootReducer); // it took only one reducer
+const store = createStore(rootReducer, applyMiddleware(logger.default)); // it took only one reducer
 console.log("Initial state", store.getState());
 
 const unSubscribe = store.subscribe(() => console.log('update state', store.getState()));
