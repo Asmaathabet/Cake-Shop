@@ -145,7 +145,8 @@ It is getting imported. It is just deprecated. It can still be imported in the f
 - seperate shopkeeper will help with scalability 
 
   ## 8 - Add Immer 
-  `npm i immer`     
+  `npm i immer` 
+  use producer in the reducer instead of `...` nesting state.     
 ----------------------------
 ### Course Resource :
 [Redux tutorial ](https://www.youtube.com/watch?v=0awA5Uw6SJE&list=PLC3y8-rFHvwiaOAuTtVXittwybYIorRB3&index=2)
