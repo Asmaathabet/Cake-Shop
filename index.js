@@ -49,16 +49,13 @@ const cakeReducer = (state = initalCakeState, action) => {
                 ...state,
                 numOfCakes: state.numOfCakes - 1,
             }
-            break;
         case CAKE_RESTOCKED:
             return {
                 ...state,
                 numOfCakes: state.numOfCakes + action.payload,
             }
-            break;
         default:
             return state
-            break;
     }
 }
 
@@ -69,16 +66,13 @@ const iceCreamReducer = (state = initalIceCreamState, action) => {
                 ...state,
                 numOfIceCreams: state.numOfIceCreams - 1,
             }
-            break;
         case ICE_CREAM_RESTOCKED:
             return {
                 ...state,
                 numOfIceCreams: state.numOfIceCreams + action.payload,
             }
-            break;
         default:
             return state
-            break;
     }
 }
 
@@ -88,7 +82,7 @@ const rootReducer = combineReducers({
 })
 
 const store = createStore(rootReducer); // it took only one reducer
-console.log("Inital state", store.getState());
+console.log("Initial state", store.getState());
 
 const unSubscribe = store.subscribe(() => console.log('update state', store.getState()));
 
