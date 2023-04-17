@@ -143,7 +143,9 @@ It is getting imported. It is just deprecated. It can still be imported in the f
 **State of the Shop**
 - number of cakes in the shelf & number of ice-creams in the freezer. 
 - seperate shopkeeper will help with scalability 
--     
+
+  ## 8 - Add Immer 
+  `npm i immer`     
 ----------------------------
 ### Course Resource :
 [Redux tutorial ](https://www.youtube.com/watch?v=0awA5Uw6SJE&list=PLC3y8-rFHvwiaOAuTtVXittwybYIorRB3&index=2)
