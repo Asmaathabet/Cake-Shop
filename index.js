@@ -1,4 +1,4 @@
-import redux from 'redux'
+import redux, { bindActionCreators } from 'redux'
 import { legacy_createStore as createStore } from 'redux';
 
 const CAKE_ORDERED = 'CAKE_ORDERED';
@@ -7,14 +7,14 @@ const CAKE_RESTOCKED = 'CAKE_RESTOCKED';
 function orderCake() { // action creator
     return {
         type: CAKE_ORDERED,
-        quantity: 1
+        payload: 1
     }
 }
 
 function restockCake(qty = 1) { // action creator
     return {
         type: CAKE_RESTOCKED,
-        quantity: qty
+        payload: qty
     }
 }
 
@@ -34,7 +34,7 @@ const reducer = (state = initalState, action) => {
         case CAKE_RESTOCKED:
             return {
                 ...state,
-                numOfCakes: state.numOfCakes + action.quantity,
+                numOfCakes: state.numOfCakes + action.payload,
             }
             break;
         default:
@@ -48,11 +48,18 @@ console.log("Inital state", store.getState());
 
 const unSubscribe = store.subscribe(() => console.log('update state', store.getState()));
 
-store.dispatch(orderCake());
-store.dispatch(orderCake());
-store.dispatch(orderCake());
+// store.dispatch(orderCake());
+// store.dispatch(orderCake());
+// store.dispatch(orderCake());
 
-store.dispatch(restockCake(3));
+// store.dispatch(restockCake(3));
+
+const actions = bindActionCreators({ orderCake, restockCake }, store.dispatch);
+
+actions.orderCake();
+actions.orderCake();
+actions.orderCake();
+actions.restockCake(3);
 
 unSubscribe();
 
