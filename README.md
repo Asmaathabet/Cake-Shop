@@ -157,6 +157,46 @@ It is getting imported. It is just deprecated. It can still be imported in the f
 **supporting resource :**
 - use `.default` beside logger in middleware.
 - [middleware problem not function](https://stackoverflow.com/questions/46869671/typeerror-middleware-is-not-a-function)
+
+ ## 10 - Aysnc Functions
+ - fetch data from endpoint and use data in your application.
+ #### Example:
+ Fetch list of users & store in redux store
+
+  - **state** :
+      - loading: Display a loading spinner in your computer. 
+      - data : list of users 
+      - error: display error to the user
+
+```js
+  state = {
+   loading: true,
+   data : [],
+   error: ''
+  }
+  ```
+
+  - **Actions** :
+    - FETCH_USERS_REQUESTED : fetch list of users
+    - FETCH_USERS_SUCCEEDED : fetched process successfully 
+    - FETCH_USERS_FAILED : Error when fetching data.
+   
+  - **Reducers** :
+     - CASE: FETCH_USERS_REQUESTED
+     loading : true
+
+     - CASE: FETCH_USERS_SUCCEEDED
+     loading : false
+     users: data from api
+
+    - CASE: FETCH_USERS_FAILED
+     loading : false
+     error: error from api
+
+  - Redux thunx middleware 
+  - install `axios` & redux-thunk for middleware by `npm i axios redux-thunk`
+  - visit `https://jsonplaceholder.typicode.com/users` website to fetch data from it .    
+  
 ----------------------------
 ### Course Resource :
 [Redux tutorial ](https://www.youtube.com/watch?v=0awA5Uw6SJE&list=PLC3y8-rFHvwiaOAuTtVXittwybYIorRB3&index=2)
