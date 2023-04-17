@@ -1,4 +1,4 @@
-import redux, { bindActionCreators } from 'redux'
+import redux, { bindActionCreators, combineReducers } from 'redux'
 import { legacy_createStore as createStore } from 'redux';
 
 const CAKE_ORDERED = 'CAKE_ORDERED';
@@ -34,12 +34,15 @@ function restockIceCream(qty = 1) { // action creator
     }
 }
 
-const initalState = {
-    numOfCakes: 10,
-    numOfIceCreams: 20,
+const initalCakeState = {
+    numOfCakes: 10
 }
 
-const reducer = (state = initalState, action) => {
+const initalIceCreamState = {
+    numOfIceCreams: 20
+}
+
+const cakeReducer = (state = initalCakeState, action) => {
     switch (action.type) {
         case CAKE_ORDERED:
             return {
@@ -53,6 +56,14 @@ const reducer = (state = initalState, action) => {
                 numOfCakes: state.numOfCakes + action.payload,
             }
             break;
+        default:
+            return state
+            break;
+    }
+}
+
+const iceCreamReducer = (state = initalIceCreamState, action) => {
+    switch (action.type) {
         case ICE_CREAM_ORDERED:
             return {
                 ...state,
@@ -71,7 +82,12 @@ const reducer = (state = initalState, action) => {
     }
 }
 
-const store = createStore(reducer);
+const rootReducer = combineReducers({
+    cake: cakeReducer,
+    iceCream: iceCreamReducer
+})
+
+const store = createStore(rootReducer); // it took only one reducer
 console.log("Inital state", store.getState());
 
 const unSubscribe = store.subscribe(() => console.log('update state', store.getState()));
